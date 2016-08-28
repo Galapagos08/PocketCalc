@@ -16,9 +16,9 @@ typedef enum {
 } Operation;
 
 @interface ViewController : UIViewController {
-    NSString *storage;
+    NSInteger storage;
     Operation operation;
-    
 }
+
 @end
 

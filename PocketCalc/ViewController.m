@@ -85,42 +85,42 @@
 
 - (IBAction)divisionButton:(UIButton *)sender {
     operation = Division;
-    storage = _display.text;
+    storage = _display.text.integerValue;
 }
 
 - (IBAction)multiplyButton:(UIButton *)sender {
     operation = Multiplication;
-    storage = _display.text;
+    storage = _display.text.integerValue;
 }
 
 - (IBAction)addButton:(id)sender {
     operation = Addition;
-    storage = _display.text;
+    storage = _display.text.integerValue;
 }
 
 - (IBAction)subtractButton:(id)sender {
     operation = Subtraction;
-    storage = _display.text;
+    storage = _display.text.integerValue;
 }
 
 - (IBAction)equalsButton:(id)sender {
     NSInteger secondNumber = _display.text.integerValue;
     switch (operation) {
         case Addition: {
-            _display.text = [NSString stringWithFormat:@"%@", @(storage.integerValue + secondNumber)];
+            _display.text = [NSString stringWithFormat:@"%@", @(storage + secondNumber)];
             break;
         }
         case Subtraction: {
-            _display.text = [NSString stringWithFormat:@"%@", @(storage.integerValue - secondNumber)];
+            _display.text = [NSString stringWithFormat:@"%@", @(storage - secondNumber)];
             break;
         }
         case Multiplication: {
-            _display.text = [NSString stringWithFormat:@"%@", @(storage.integerValue * secondNumber)];
+            _display.text = [NSString stringWithFormat:@"%@", @(storage * secondNumber)];
             break;
         }
         case Division: {
             if (secondNumber != 0) {
-                _display.text = [NSString stringWithFormat:@"%@", @(storage.integerValue / secondNumber)];
+                _display.text = [NSString stringWithFormat:@"%@", @(storage / secondNumber)];
                 
             } else {
                 _display.text = [NSString stringWithFormat:@"Error"];
