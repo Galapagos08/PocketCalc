@@ -9,16 +9,17 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-- (IBAction)numberButton:(id)sender;
-- (IBAction)divisionButton:(id)sender;
-- (IBAction)multiplyButton:(id)sender;
-- (IBAction)addButton:(id)sender;
-- (IBAction)subtractButton:(id)sender;
-- (IBAction)equalsButton:(id)sender;
-- (IBAction)allClearButton:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *display;
+@property(nonatomic, copy) NSString *text;
+- (IBAction)numberButton:(UIButton *)sender;
+- (IBAction)divisionButton:(UIButton *)sender;
+- (IBAction)multiplyButton:(UIButton *)sender;
+- (IBAction)addButton:(UIButton *)sender;
+- (IBAction)subtractButton:(UIButton *)sender;
+- (IBAction)equalsButton:(UIButton *)sender;
+- (IBAction)allClearButton:(UIButton *)sender;
 
-@property (strong, nonatomic) IBOutlet UILabel *display;
 
 @end
 
@@ -36,13 +37,23 @@
 }
 
 
-- (IBAction)numberButton:(id)sender {
+- (IBAction)numberButton:(UIButton *)sender {
+    [self.display setText:sender.currentTitle];
+}
+ 
+
+   /*
+    
+    NSInteger displayText = sender.currentTitle.integerValue;
+    NSString *display = [NSString stringWithFormat:@"%@", @(displayText)];
+    */
+
+
+
+- (IBAction)divisionButton:(UIButton *)sender {
 }
 
-- (IBAction)divisionButton:(id)sender {
-}
-
-- (IBAction)multiplyButton:(id)sender {
+- (IBAction)multiplyButton:(UIButton *)sender {
 }
 
 - (IBAction)addButton:(id)sender {
