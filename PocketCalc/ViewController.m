@@ -94,9 +94,13 @@
 }
 
 - (IBAction)addButton:(id)sender {
+    operation = Addition;
+    storage = _display.text;
 }
 
 - (IBAction)subtractButton:(id)sender {
+    operation = Subtraction;
+    storage = _display.text;
 }
 
 - (IBAction)equalsButton:(id)sender {
@@ -116,10 +120,10 @@
         }
         case Division: {
             if (secondNumber != 0) {
-                _display.text = [NSString stringWithFormat:@"%@", @(storage.integerValue + secondNumber)];
+                _display.text = [NSString stringWithFormat:@"%@", @(storage.integerValue / secondNumber)];
                 
             } else {
-                _display.text = [NSString stringWithFormat:@"Error. You cannot divide by zero."];
+                _display.text = [NSString stringWithFormat:@"Error"];
             }
             break;
         }
