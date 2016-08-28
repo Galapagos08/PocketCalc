@@ -9,6 +9,16 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+- (IBAction)numberButton:(id)sender;
+- (IBAction)divisionButton:(id)sender;
+- (IBAction)multiplyButton:(id)sender;
+- (IBAction)addButton:(id)sender;
+- (IBAction)subtractButton:(id)sender;
+- (IBAction)equalsButton:(id)sender;
+- (IBAction)allClearButton:(id)sender;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *display;
 
 @end
 
@@ -26,4 +36,24 @@
 }
 
 
+- (IBAction)numberButton:(id)sender {
+}
+
+- (IBAction)divisionButton:(id)sender {
+}
+
+- (IBAction)multiplyButton:(id)sender {
+}
+
+- (IBAction)addButton:(id)sender {
+}
+
+- (IBAction)subtractButton:(id)sender {
+}
+
+- (IBAction)equalsButton:(id)sender {
+}
+
+- (IBAction)allClearButton:(id)sender {
+}
 @end
