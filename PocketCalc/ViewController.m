@@ -11,8 +11,16 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *display;
-@property(nonatomic, copy) NSString *text;
-- (IBAction)numberButton:(UIButton *)sender;
+- (IBAction)number9Button:(UIButton *)sender;
+- (IBAction)number8Button:(UIButton *)sender;
+- (IBAction)number7Button:(UIButton *)sender;
+- (IBAction)number6Button:(UIButton *)sender;
+- (IBAction)number5Button:(UIButton *)sender;
+- (IBAction)number4Button:(UIButton *)sender;
+- (IBAction)number3Button:(UIButton *)sender;
+- (IBAction)number2Button:(UIButton *)sender;
+- (IBAction)number1Button:(UIButton *)sender;
+- (IBAction)number0Button:(UIButton *)sender;
 - (IBAction)divisionButton:(UIButton *)sender;
 - (IBAction)multiplyButton:(UIButton *)sender;
 - (IBAction)addButton:(UIButton *)sender;
@@ -30,30 +38,59 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)numberButton:(UIButton *)sender {
+- (IBAction)number9Button:(UIButton *)sender {
     [self.display setText:sender.currentTitle];
 }
- 
 
-   /*
-    
-    NSInteger displayText = sender.currentTitle.integerValue;
-    NSString *display = [NSString stringWithFormat:@"%@", @(displayText)];
-    */
+- (IBAction)number8Button:(UIButton *)sender {
+    [self.display setText:sender.currentTitle];
+}
 
+- (IBAction)number7Button:(UIButton *)sender {
+    [self.display setText:sender.currentTitle];
+}
 
+- (IBAction)number6Button:(UIButton *)sender {
+    [self.display setText:sender.currentTitle];
+}
+
+- (IBAction)number5Button:(UIButton *)sender {
+    [self.display setText:sender.currentTitle];
+}
+
+- (IBAction)number4Button:(UIButton *)sender {
+    [self.display setText:sender.currentTitle];
+}
+
+- (IBAction)number3Button:(UIButton *)sender {
+    [self.display setText:sender.currentTitle];
+}
+
+- (IBAction)number2Button:(UIButton *)sender {
+    [self.display setText:sender.currentTitle];
+}
+
+- (IBAction)number1Button:(UIButton *)sender {
+    [self.display setText:sender.currentTitle];
+}
+
+- (IBAction)number0Button:(UIButton *)sender {
+    [self.display setText:sender.currentTitle];
+}
 
 - (IBAction)divisionButton:(UIButton *)sender {
+    operation = Division;
+    storage = _display.text;
 }
 
 - (IBAction)multiplyButton:(UIButton *)sender {
+    operation = Multiplication;
+    storage = _display.text;
 }
 
 - (IBAction)addButton:(id)sender {
@@ -63,8 +100,33 @@
 }
 
 - (IBAction)equalsButton:(id)sender {
+    NSInteger secondNumber = _display.text.integerValue;
+    switch (operation) {
+        case Addition: {
+            _display.text = [NSString stringWithFormat:@"%@", @(storage.integerValue + secondNumber)];
+            break;
+        }
+        case Subtraction: {
+            _display.text = [NSString stringWithFormat:@"%@", @(storage.integerValue - secondNumber)];
+            break;
+        }
+        case Multiplication: {
+            _display.text = [NSString stringWithFormat:@"%@", @(storage.integerValue * secondNumber)];
+            break;
+        }
+        case Division: {
+            if (secondNumber != 0) {
+                _display.text = [NSString stringWithFormat:@"%@", @(storage.integerValue + secondNumber)];
+                
+            } else {
+                _display.text = [NSString stringWithFormat:@"Error. You cannot divide by zero."];
+            }
+            break;
+        }
+    }
+}
+- (IBAction)allClearButton:(id)sender {
+    [self.display setText:@"0"];
 }
 
-- (IBAction)allClearButton:(id)sender {
-}
 @end

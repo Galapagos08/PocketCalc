@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+typedef enum {
+    Addition,
+    Subtraction,
+    Multiplication,
+    Division
+} Operation;
 
-
+@interface ViewController : UIViewController {
+    NSString *storage;
+    Operation operation;
+    
+}
 @end
 
